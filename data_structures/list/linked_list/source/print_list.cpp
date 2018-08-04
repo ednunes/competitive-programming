@@ -5,12 +5,25 @@
 
 using namespace std;
 
-void print_linked_list(struct Node* node)
+void print_linked_list_interactive(struct Node* node)
 {
     while(node!=NULL)
     {
-        cout << node->data << endl;
+        cout << node->data << " ";
         node = node->next;
     }
+    cout << endl;
 }
 
+void print_linked_list_recursive(struct Node* node)
+{
+    if(node)
+    {
+        cout << node->data << " ";
+        print_linked_list_recursive(node->next);
+    }
+    else
+    {
+        cout << endl;
+    }
+}

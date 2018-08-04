@@ -48,7 +48,7 @@ void insert_after_given_data(struct Node* node, int value, int value_to_be_found
         cout << "The current head cannot be NULL" << endl;
         return;
     }
-    struct Node* current_node = find_node_a_with_a_given_data(node, value_to_be_found);
+    struct Node* current_node = find_node_a_with_a_given_data_interactive(node, value_to_be_found);
     struct Node* new_node = create_node(value);
     new_node->next = current_node->next;
     current_node->next = new_node;
