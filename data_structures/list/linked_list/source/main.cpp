@@ -47,7 +47,7 @@ int main()
     else cout << "Empty list" << endl;
     
     
-    cout << "The list size is: " << list_size_recursive(head,0) << endl;    
+    cout << "The list size is: " << list_size_recursive(head) << endl;    
 
     return 0;
 }

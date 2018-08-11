@@ -29,7 +29,7 @@ struct Node* find_last_node(struct Node* node)
     return last_node;
 }
 
-int list_size(struct Node* node, int count){
-    if(!node) return count;
-    else return list_size(node->next, ++count);
+int list_size_recursive(struct Node* node){
+    if(!node) return 0;
+    else return 1 + list_size_recursive(node->next);
 }

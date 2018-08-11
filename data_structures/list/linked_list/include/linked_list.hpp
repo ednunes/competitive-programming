@@ -25,6 +25,6 @@ void push_back(struct Node* head, int value);
 void print_linked_list_interactive(struct Node* node);
 void print_linked_list_recursive(struct Node* node);
 
-int list_size_recursive(struct Node* node, int count);
+int list_size_recursive(struct Node* node);
 
 #endif
