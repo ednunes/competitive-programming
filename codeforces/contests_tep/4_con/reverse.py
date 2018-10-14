@@ -1,5 +1,0 @@
-x = input()
-y = input()
-z = reversed(x)
-if(z==y): print("YES")
-else: print("NO")
