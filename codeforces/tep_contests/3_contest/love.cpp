@@ -3,23 +3,25 @@
 using namespace std;
 
 int main(){
-    int a = 0, mi = 0, m = 0, x =0, n =0;
-    cin >> n;
-    cin >> x;
-    m = x; mi = x;
-    n-=1;
-    int y = 0;
+    int x, n, y = 0;
+
+    cin >> n >> x;
+    
+    int m = x, mi = x;
+    n--;
+
     while(n--){
         cin >> x;
-        if(x>m){
+        if(x > m){
             m = x;
             y++;
         }
-        else if(x<mi){
+        else if(x < mi){
             mi = x;
             y++;
         }
     }
+
     cout << y << endl;
     return 0;
 }
