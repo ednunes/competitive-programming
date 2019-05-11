@@ -12,9 +12,15 @@ using ll = long long;
 
 int main(){
 	IOS;
+	int n, sum = 0; cin >> n;
+	vector<ii> v(n);
+	REP(i,0,n-1) { cin >> v[i].first; v[i].second = i + 1; } 
 
-	
+	sort(v.begin(), v.end());
 
+	REP(j, 0, (n/2)-1){
+		cout << v[j].second << " " << v[n-j-1].second << endl; 
+	}
 
     return 0;
 }

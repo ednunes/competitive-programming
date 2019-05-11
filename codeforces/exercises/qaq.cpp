@@ -12,6 +12,20 @@ using ll = long long;
 
 int main(){
 	IOS;
+	string s; cin >> s;
+	int c = 0;
+	REP(i,0,s.size()-1){
+		if(s[i]=='Q'){
+			REP(j,i,s.size()-1){
+					if(s[j]=='A'){
+						REP(k,j,s.size()-1){
+							c+=(s[k]=='Q');
+					}
+				}
+			}
+		}
+	}
+	cout << c << endl;
 
 	
 
