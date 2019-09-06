@@ -14,19 +14,5 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, k;
-  cin >> n >> k;
-  vector<int> v(k, 0);
-  char c;
-  REP(i, 0, n - 1) {
-    cin >> c;
-    v[c - 'A']++;
-  }
-  int mi = n;
-  for (auto x : v)
-    mi = min(x, mi);
-
-  cout << mi * k << endl;
-
   return 0;
 }
