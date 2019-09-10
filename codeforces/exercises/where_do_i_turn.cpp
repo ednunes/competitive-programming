@@ -14,14 +14,17 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
-  }
+  ll x1, x2, x3, y1, y2, y3;
+  cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  ll det =
+      ((x1 * y2) + (x3 * y1) + (x2 * y3) - ((x3 * y2) + (x1 * y3) + (x2 * y1)));
+
+  if (!det)
+    cout << "TOWARDS" << endl;
+  else {
+    (det > 0) ? cout << "LEFT" << endl : cout << "RIGHT" << endl;
+  }
 
   return 0;
 }

@@ -14,14 +14,17 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
-  }
+  double x, y, r, x1, y1, r1, resp = 0;
+  cin >> x >> y >> r >> x1 >> y1 >> r1;
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  double dist = hypot(x1 - x, y1 - y);
+
+  if (dist > r + r1)
+    resp = dist - abs(r + r1);
+  if (dist > abs(r - r1))
+    resp = abs(r - r1) - dist;
+
+  printf("%.15lf\n", resp / 2.0);
 
   return 0;
 }

@@ -14,14 +14,21 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
+
+  int n;
   cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+  string s, ss;
+  cin >> ss;
+  REP(i, 0, n - 1) {
+    char c = ss[i];
+    if (n & 1) {
+      s = ((i & 1) ? c + s : s + c);
+    } else {
+      s = ((i & 1) ? s + c : c + s);
+    }
   }
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  cout << s << endl;
 
   return 0;
 }

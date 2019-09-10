@@ -14,14 +14,15 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
+  int n;
   cin >> n;
+
+  ll x, y, ma = 0;
   while (n--) {
     cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+    ma = max(x + y, ma);
   }
-
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  cout << ma << endl;
 
   return 0;
 }

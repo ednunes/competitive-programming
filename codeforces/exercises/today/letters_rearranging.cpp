@@ -14,14 +14,14 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
+  int n;
   cin >> n;
+  string s;
   while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+    cin >> s;
+    sort(s.begin(), s.end());
+    cout << ((s.front() != s.back()) ? s : "-1") << endl;
   }
-
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
 
   return 0;
 }

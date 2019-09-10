@@ -14,14 +14,18 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
-  }
+  string s = "eduardo_nunes";
+  cout << s << endl;
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  char c = 'a';
+  string cc = "a";
+  cout << "CC " << cc << endl;
+
+  string ss = c + s;
+  string sss = s + c;
+  string ssss = cc + s;
+
+  cout << ss << " " << sss << " " << ssss << endl;
 
   return 0;
 }

@@ -14,14 +14,24 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+  int n, m;
+  cin >> n >> m;
+  map<string, string> x;
+  vector<pair<string, string>> y(m);
+  pair<string, string> p;
+  string a, b;
+
+  REP(i, 0, n - 1) {
+    cin >> p.second >> p.first;
+    x.insert(p);
   }
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  REP(i, 0, m - 1) { cin >> y[i].second >> y[i].first; }
+
+  for (auto m : y) {
+    cout << m.second << " " << m.first << " #";
+    cout << x[m.first.substr(0, m.first.size() - 1)] << endl;
+  }
 
   return 0;
 }

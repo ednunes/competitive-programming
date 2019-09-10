@@ -14,14 +14,12 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
-  }
+  int x, y, z;
+  cin >> x >> y >> z;
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  double a = sqrt((x * z) / (y * 1.0));
+
+  cout << ceil(4 * (a + x / a + y / a)) << endl;
 
   return 0;
 }

@@ -14,14 +14,24 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+  string s;
+  cin >> s;
+  bool b = true;
+
+  string vowels = "aeiou";
+
+  if (vowels.find(s.back()) == string::npos and s.back() != 'n') {
+    b = false;
+  } else {
+    REP(i, 1, s.size() - 1) {
+      if ((s[i - 1] != 'n') and (vowels.find(s[i - 1]) == std::string::npos) and
+          (vowels.find(s[i]) == std::string::npos)) {
+        b = false;
+      }
+    }
   }
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  cout << (b ? "YES" : "NO") << endl;
 
   return 0;
 }

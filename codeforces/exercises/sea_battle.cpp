@@ -14,14 +14,9 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
-  }
-
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  int x, y, x1, y1;
+  cin >> x >> y >> x1 >> y1;
+  cout << 2 * (x + y + y1) + 4 << endl;
 
   return 0;
 }

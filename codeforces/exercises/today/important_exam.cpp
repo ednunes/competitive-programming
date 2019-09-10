@@ -14,14 +14,26 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
-  cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+  int n, m;
+  cin >> n >> m;
+  vector<string> s(n);
+  int v[m][5] = {};
+  vector<int> p(m);
+
+  REP(i, 0, n - 1) cin >> s[i];
+  REP(j, 0, m - 1) cin >> p[j];
+
+  REP(j, 0, m - 1) { REP(i, 0, n - 1) v[j][s[i][j] - 'A']++; }
+
+  int ma = 0, soma = 0;
+
+  REP(i, 0, m - 1) {
+    REP(j, 0, 4) ma = max(v[i][j], ma);
+    soma += ma * p[i];
+    ma = 0;
   }
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  cout << soma << endl;
 
   return 0;
 }

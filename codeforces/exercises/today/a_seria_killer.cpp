@@ -10,18 +10,22 @@
 
 using namespace std;
 using ii = pair<int, int>;
+using ss = pair<string, string>;
 using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
+  string x, y;
+  ss p;
+  cin >> x >> y;
+  int n;
   cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+  cout << x << " " << y << endl;
+  REP(i, 0, n - 1) {
+    cin >> p.first >> p.second;
+    (p.first == x) ? x = p.second : y = p.second;
+    cout << x << " " << y << endl;
   }
-
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
 
   return 0;
 }

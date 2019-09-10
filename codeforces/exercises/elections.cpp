@@ -14,14 +14,20 @@ using ll = long long;
 
 int main() {
   IOS;
-  int n, x, y, pos = 0, neg = 0;
+  int n, x, s = 0, mi = 0;
   cin >> n;
-  while (n--) {
-    cin >> x >> y;
-    (x > 0) ? ++pos : ++neg;
+
+  REP(i, 0, n - 1) {
+    cin >> x;
+    s += x;
+    mi = max(x, mi);
   }
 
-  (pos <= 1 or neg <= 1) ? cout << "YES" << endl : cout << "NO" << endl;
+  s *= 2;
+  s += n;
+  s /= n;
+
+  cout << max(s, mi) << endl;
 
   return 0;
 }
